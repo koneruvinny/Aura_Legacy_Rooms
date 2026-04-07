@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
-import { Home, Compass, User, LogOut, Menu, X } from 'lucide-react';
+import { LogOut, Menu, X } from 'lucide-react';
 import '../css/Navbar.css';
 
 const Navbar = () => {
@@ -10,7 +10,6 @@ const Navbar = () => {
   const location = useLocation();
 
   const token = localStorage.getItem('aura_token');
-  const user = JSON.parse(localStorage.getItem('aura_user') || 'null');
 
   useEffect(() => {
     const handleScroll = () => {

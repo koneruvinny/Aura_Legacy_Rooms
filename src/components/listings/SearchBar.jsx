@@ -1,5 +1,6 @@
-import React, { useState, useRef, useEffect } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { MapPin, Calendar, Users, Search, Clock, Flame, X, ArrowUpRight } from 'lucide-react';
+import PropTypes from 'prop-types';
 
 // ── Static suggestion data ────────────────────────────────────────────────────
 const RECENT_SEARCHES = [
@@ -112,7 +113,7 @@ const SearchBar = ({ location = '', onSearch }) => {
                   onClick={() => pickSuggestion(dropQuery)}
                 >
                   <Search size={14} />
-                  <span>Search: <strong>"{dropQuery}"</strong></span>
+                  <span>Search: <strong>&quot;{dropQuery}&quot;</strong></span>
                   <ArrowUpRight size={14} className="lsb-drop-goto" />
                 </button>
               )}
@@ -219,6 +220,15 @@ const SearchBar = ({ location = '', onSearch }) => {
       </div>
     </div>
   );
+};
+
+SearchBar.propTypes = {
+  location: PropTypes.string,
+  onSearch: PropTypes.func.isRequired,
+};
+
+SearchBar.defaultProps = {
+  location: '',
 };
 
 export default SearchBar;

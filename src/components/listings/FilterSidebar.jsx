@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Search, X, MapPin } from 'lucide-react';
+import PropTypes from 'prop-types';
 
 // ── Static filter options ─────────────────────────────────────────────────────
 const SUGGESTED = [
@@ -66,6 +67,22 @@ const FilterSection = ({ title, items, selected, onChange, showMoreAfter }) => {
       )}
     </div>
   );
+};
+
+FilterSection.propTypes = {
+  title: PropTypes.string.isRequired,
+  items: PropTypes.arrayOf(PropTypes.shape({
+    id: PropTypes.string.isRequired,
+    label: PropTypes.string.isRequired,
+    count: PropTypes.number,
+  })).isRequired,
+  selected: PropTypes.arrayOf(PropTypes.string).isRequired,
+  onChange: PropTypes.func.isRequired,
+  showMoreAfter: PropTypes.number,
+};
+
+FilterSection.defaultProps = {
+  showMoreAfter: null,
 };
 
 // ── Helpers ───────────────────────────────────────────────────────────────────

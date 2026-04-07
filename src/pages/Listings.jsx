@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from 'react';
+import { useState, useMemo } from 'react';
 import { ChevronRight, Compass } from 'lucide-react';
 
 import SearchBar       from '../components/listings/SearchBar';

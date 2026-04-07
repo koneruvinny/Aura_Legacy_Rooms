@@ -1,4 +1,3 @@
-import React from 'react';
 import { COLLECTIONS } from '../../data/mockData';
 
 const CollectionsRow = () => (

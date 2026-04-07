@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Heart, Star, Camera, MapPin } from 'lucide-react';
+import PropTypes from 'prop-types';
 
 // ── Helpers ───────────────────────────────────────────────────────────────────
 const getRatingLabel = rating => {
@@ -127,6 +128,26 @@ const ListingCard = ({ property }) => {
 
     </article>
   );
+};
+
+ListingCard.propTypes = {
+  property: PropTypes.shape({
+    isWishlisted: PropTypes.bool,
+    imageUrls: PropTypes.arrayOf(PropTypes.string),
+    title: PropTypes.string.isRequired,
+    deals: PropTypes.arrayOf(PropTypes.string),
+    photoCount: PropTypes.number,
+    stars: PropTypes.number,
+    location: PropTypes.string,
+    distance: PropTypes.string,
+    tags: PropTypes.arrayOf(PropTypes.string),
+    highlights: PropTypes.arrayOf(PropTypes.string),
+    rating: PropTypes.number,
+    ratingCount: PropTypes.number,
+    originalPrice: PropTypes.number,
+    price: PropTypes.number,
+    taxes: PropTypes.number,
+  }).isRequired,
 };
 
 export default ListingCard;

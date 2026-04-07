@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import api from '../services/api';
 import '../css/Auth.css';
@@ -16,7 +16,7 @@ const Login = () => {
       localStorage.setItem('aura_token', response.data.token);
       localStorage.setItem('aura_user', JSON.stringify(response.data.user));
       navigate('/');
-    } catch (err) {
+    } catch {
       setError('Invalid email or password');
     }
   };
@@ -56,7 +56,7 @@ const Login = () => {
         </form>
         
         <div className="auth-footer">
-          Don't have an account? <a href="/register">Sign up</a>
+          Don&apos;t have an account? <a href="/register">Sign up</a>
         </div>
       </div>
     </div>

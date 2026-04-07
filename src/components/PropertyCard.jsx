@@ -1,6 +1,6 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
 import { MapPin, Star } from 'lucide-react';
+import PropTypes from 'prop-types';
 import '../css/PropertyCard.css';
 
 const PropertyCard = ({ property }) => {
@@ -52,6 +52,23 @@ const PropertyCard = ({ property }) => {
       </div>
     </Link>
   );
+};
+
+PropertyCard.propTypes = {
+  property: PropTypes.shape({
+    id: PropTypes.string,
+    _id: PropTypes.string,
+    imageUrls: PropTypes.arrayOf(PropTypes.string),
+    title: PropTypes.string.isRequired,
+    type: PropTypes.string,
+    rating: PropTypes.number,
+    area: PropTypes.string,
+    state: PropTypes.string,
+    sharing: PropTypes.bool,
+    forGender: PropTypes.string,
+    price: PropTypes.number,
+    layout: PropTypes.string,
+  }).isRequired,
 };
 
 export default PropertyCard;

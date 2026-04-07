@@ -1,7 +1,6 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Search, Compass, Star, ArrowLeft, ArrowRight, MapPin, Headphones, Shield, Tag, Send, Users } from 'lucide-react';
-import api from '../services/api';
+import { Search, Compass, Star, ArrowLeft, ArrowRight, MapPin, Headphones, Send, Users } from 'lucide-react';
 import PropertyCard from '../components/PropertyCard';
 import { MOCK_PROPERTIES, AREA_ATTRACTIONS } from '../data/mockData';
 import '../css/Home.css';
@@ -44,7 +43,6 @@ const LAYOUTS = ["Single Room", "Room", "Studio", "Shared Room"];
 const SHARING_OPTIONS = ["1 Sharing", "2 Sharing", "3 Sharing"];
 
 const Home = () => {
-  const [allProperties, setAllProperties] = useState(MOCK_PROPERTIES);
   const [featuredProperties, setFeaturedProperties] = useState([]);
   const [currentReviewIndex, setCurrentReviewIndex] = useState(0);
 
@@ -175,7 +173,7 @@ const Home = () => {
         <div className="section-header">
           <div>
             <h2 className="section-title">Hot PG Localities</h2>
-            <p className="section-subtitle">Discover comfortable stays in India's top tech hubs.</p>
+            <p className="section-subtitle">Discover comfortable stays in India&apos;s top tech hubs.</p>
           </div>
         </div>
         <div className="destinations-grid">

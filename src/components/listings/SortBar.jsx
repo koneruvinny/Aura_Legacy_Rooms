@@ -1,5 +1,5 @@
-import React from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
+import PropTypes from 'prop-types';
 
 const SORT_OPTIONS = [
   { id: 'popularity',  label: 'Popularity' },
@@ -33,5 +33,10 @@ const SortBar = ({ activeSort, onSortChange }) => (
     </button>
   </div>
 );
+
+SortBar.propTypes = {
+  activeSort: PropTypes.string.isRequired,
+  onSortChange: PropTypes.func.isRequired,
+};
 
 export default SortBar;

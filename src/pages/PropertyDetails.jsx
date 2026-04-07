@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { MapPin, Star, Check, ArrowLeft } from 'lucide-react';
 import api from '../services/api';
@@ -41,7 +41,7 @@ const PropertyDetails = () => {
         totalAmount: property.price
       });
       setBookingStatus('Booking Confirmed!');
-    } catch (error) {
+    } catch {
       setBookingStatus('Failed to create booking.');
     }
   };
@@ -110,7 +110,7 @@ const PropertyDetails = () => {
               {bookingStatus || 'Book Now'}
             </button>
             
-            <p className="booking-note">You won't be charged yet</p>
+            <p className="booking-note">You won&apos;t be charged yet</p>
           </div>
         </div>
       </div>
